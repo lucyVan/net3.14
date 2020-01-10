@@ -1,0 +1,43 @@
+#服务器端口号
+server:
+  port: 8090
+spring:
+  #热部署配置
+  freemarker:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+  #数据源配置
+  datasource:
+    name: net3.0
+    url: jdbc:mysql://localhost:3306/net3.0?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: ENC(QSxrhLzFuliDoNRuJ/Vtzw==)
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据库连接池hikari配置
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  #jpa相关配置
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        formate_sql: true
+    hibernate:
+      ddl-auto: update
+#数据库加密
+jasypt:
+  encryptor:
+    password: lucy
+#swagger配置
+swagger:
+  enabled: true
+  print-init: true
+  docket:
+    base-package: com.net.demo
+    api-info:
+      contact:
+        name: lucy
